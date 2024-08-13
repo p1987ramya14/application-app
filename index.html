@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Redirection</title>
+</head>
+<body>
+    <script>
+        // Function to attempt opening the app
+        function tryOpenApp() {
+            var appUrl = 'https://www.amazon.com/Simple-Joys-Carters-Short-Sleeve-Bodysuit/dp/B07GY1RRZF'; // Custom URL scheme
+            var fallbackUrl = 'https://roastandrelish.store/honey-chicken-recipe-french'; // App download page
+
+            // Create an invisible iframe
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = appUrl;
+            document.body.appendChild(iframe);
+
+            // Redirect after a timeout
+            setTimeout(function() {
+                window.location.href = fallbackUrl;
+            }, 2000); // 2-second delay to allow app opening
+        }
+
+        // Call the function
+        tryOpenApp();
+    </script>
+</body>
+</html>
