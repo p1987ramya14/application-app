@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>App Redirection</title>
+    <meta http-equiv="refresh" content="0;url=https://roastandrelish.store/honey-chicken-recipe-french">
 </head>
 <body>
     <noscript>
@@ -9,21 +10,22 @@
         <p>Please <a href="https://roastandrelish.store/honey-chicken-recipe-french">click here</a> to download our app.</p>
     </noscript>
     <script>
+        // Function to attempt opening the app and fallback to download page
         function tryOpenApp() {
-            var appUrl = 'https://www.amazon.com/Simple-Joys-Carters-Short-Sleeve-Bodysuit/dp/B07GY1RRZF'; // Custom URL scheme
+            var appUrl = 'https://www.amazon.com/Simple-Joys-Carters-Short-Sleeve-Bodysuit/dp/B07GY1RRZF'; // Custom URL scheme or deep link
             var fallbackUrl = 'https://roastandrelish.store/honey-chicken-recipe-french'; // App download page
 
-            // Create an invisible iframe
+            // Create an invisible iframe to attempt opening the app
             var iframe = document.createElement('iframe');
             iframe.style.display = 'none';
             iframe.src = appUrl;
             document.body.appendChild(iframe);
 
-            // Redirect after a delay
+            // Redirect to fallback URL if app did not open
             setTimeout(function() {
                 // Redirect to fallback URL if app did not open
                 window.location.href = fallbackUrl;
-            }, 1500); // 1.5-second delay
+            }, 1500); // 1.5-second delay to allow app opening
         }
 
         // Call the function to attempt to open the app
