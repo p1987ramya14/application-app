@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     if (appIsInstalled) {
         res.redirect('https://www.amazon.com/Simple-Joys-Carters-Short-Sleeve-Bodysuit/dp/B07GY1RRZF');
     } else {
-        res.redirect('https://roastandrelish.store/honey-chicken-recipe-french');
+        res.redirect('https://roastandrelish.store');
     }
 });
 
